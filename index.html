@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BKK ULQ – รายเขต (0–1)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+  <h1>ดัชนีคุณภาพภูมิทัศนียภาพเมือง กทม. (0–1) — รายเขต</h1>
+  <p>ป้อน URL CSV จาก Google Sheets (Publish to the web → CSV) แล้วกดโหลดข้อมูล</p>
+</header>
+<main>
+  <div id="controls">
+    <input id="csvUrl" type="text" placeholder="วางลิงก์ CSV เช่น .../pub?output=csv" />
+    <button id="loadBtn">โหลดข้อมูล</button>
+    <span class="hint">หากขึ้น Failed to fetch ให้โฮสต์ไฟล์นี้บน GitHub Pages ตาม README.md</span>
+  </div>
+  <section class="grid">
+    <div class="card">
+      <h2>ตารางคะแนนรายเขต</h2>
+      <table id="scoreTable">
+        <thead><tr><th>เขต</th><th>คะแนน (0–1)</th><th>ช่วงชั้น</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h2>กราฟอันดับรายเขต</h2>
+      <canvas id="barChart"></canvas>
+    </div>
+  </section>
+  <section class="card">
+    <h2>ช่วงชั้น (Intervals)</h2>
+    <ul id="legend"></ul>
+  </section>
+</main>
+<footer><small>Prototype (Free Stack: Google Forms + Sheets + Apps Script + GitHub Pages)</small></footer>
+<script src="app.js"></script>
+</body>
+</html>
